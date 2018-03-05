@@ -17,7 +17,7 @@ class FragmentNotCreatedTrips : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View =
             inflater.inflate(R.layout.fragment_not_created_trips, container, false)
 
-    override fun onViewCreated(view: View?, savedInstanceState: Bundle?) {
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
         var countNotCreatedTrips = 0
@@ -28,7 +28,7 @@ class FragmentNotCreatedTrips : Fragment() {
     }
 
     private fun displayValues(countNotCreatedTrips: Int, percentsNotCreatedTrips: Int) {
-        countNotCreatedTripsText.text = StringBuilder(context.getString(R.string.not_created_trips)).append(" ")
+        countNotCreatedTripsText.text = StringBuilder(context?.getString(R.string.not_created_trips)).append(" ")
                 .append(countNotCreatedTrips).append(" (").append(percentsNotCreatedTrips).append("%").append(")")
     }
 }

@@ -67,7 +67,6 @@ class FragmentLastActivityUsers : Fragment() {
             startActivity(intent)
         }
     }
-    //fixme onDestroyView
 
     fun updateActiveUsers() {
         installActiveUsers()

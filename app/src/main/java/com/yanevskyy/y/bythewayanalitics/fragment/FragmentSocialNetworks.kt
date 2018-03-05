@@ -18,7 +18,7 @@ class FragmentSocialNetworks : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View =
             inflater.inflate(R.layout.fragment_social_networks, container, false)
 
-    override fun onViewCreated(view: View?, savedInstanceState: Bundle?) {
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
         var countAnyNetworks = 0
@@ -44,13 +44,13 @@ class FragmentSocialNetworks : Fragment() {
 
     private fun displayValues(countAnyNetworks: Int, percentTG: Int, percentVK: Int, percentWhatsapp: Int, countTG: Int,
                               countVK: Int, countWhatsapp: Int) {
-        countAnyNetworkText.text = StringBuilder(context.getString(R.string.contains_any_networks)).append(" ")
+        countAnyNetworkText.text = StringBuilder(context?.getString(R.string.contains_any_networks)).append(" ")
                 .append(countAnyNetworks)
-        countTGText.text = StringBuilder(context.getString(R.string.contains_telegram)).append(" ")
+        countTGText.text = StringBuilder(context?.getString(R.string.contains_telegram)).append(" ")
                 .append(countTG).append(" (").append(percentTG).append("%").append(")")
-        countVKText.text = StringBuilder(context.getString(R.string.contains_vk)).append(" ").append(countVK)
+        countVKText.text = StringBuilder(context?.getString(R.string.contains_vk)).append(" ").append(countVK)
                 .append(" (").append(percentVK).append("%").append(")")
-        countWhatsappText.text = StringBuilder(context.getString(R.string.contains_whatsapp)).append(" ")
+        countWhatsappText.text = StringBuilder(context?.getString(R.string.contains_whatsapp)).append(" ")
                 .append(countWhatsapp).append(" (").append(percentWhatsapp).append("%").append(")")
     }
 }

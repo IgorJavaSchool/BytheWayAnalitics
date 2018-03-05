@@ -33,8 +33,8 @@ import java.util.concurrent.atomic.AtomicInteger
 class FragmentParseEmails : Fragment() {
 
 
-    override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        val view = inflater?.inflate(R.layout.fragment_parse_emails,
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
+        val view = inflater.inflate(R.layout.fragment_parse_emails,
                 container, false)
         view?.findViewById<Button>(R.id.bt_getemails)?.setOnClickListener {
             sendRequest()
@@ -74,7 +74,7 @@ class FragmentParseEmails : Fragment() {
         service = retrofit.create(TeamTravellers::class.java)
 
 
-        var countTest = AtomicInteger(0)
+        val countTest = AtomicInteger(0)
 
         runBlocking {
             List(21000) {
@@ -109,7 +109,7 @@ class FragmentParseEmails : Fragment() {
     fun writteText(list: List<String>) {
         try {
             val filename = "email ${list.size}.txt"
-            getContext().openFileOutput(filename, Context.MODE_PRIVATE).use {
+            context?.openFileOutput(filename, Context.MODE_PRIVATE)?.use {
                 list.forEach { list ->
                     it.write(list.toByteArray())
                     it.write(", ".toByteArray())
