@@ -32,12 +32,12 @@
             android:theme="@style/AppTheme.NoActionBar" />
 
 
-        <!--<receiver android:name=".StartUpBootReceiver">-->
-        <!--<intent-filter>-->
-        <!--<action android:name="android.intent.action.BOOT_COMPLETED" />-->
-        <!--</intent-filter>-->
-        <!--</receiver>-->
-        <!---->
+        <receiver android:name=".StartUpBootReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+
         <service
             android:name=".LoadUsersScheduler"
             android:exported="true"

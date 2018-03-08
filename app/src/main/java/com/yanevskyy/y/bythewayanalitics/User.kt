@@ -2,7 +2,7 @@ package com.firebase.mm.myapplication
 
 import com.google.firebase.firestore.GeoPoint
 import java.io.Serializable
-import java.util.HashMap
+import java.util.*
 
 /**
  * Created by MM on 29.01.2018.
@@ -29,7 +29,7 @@ enum class SocialNetwork(var link: String) {
 data class User(var name: String = "",
                 var lastName: String = "",
                 var age: Int = 0,
-                var id: String = "0",
+                var id: String = "",
                 var email: String = "",
                 var phone: String = "",
                 var countTrip: Int = 0,
@@ -54,7 +54,8 @@ data class User(var name: String = "",
                 var sex: Int = 0,
                 var socialNetwork: HashMap<String, String> = hashMapOf<String, String>(),
                 var data: Long = 0,
-                var urlPhoto: String = "https://www.ischool.berkeley.edu/sites/default/files/default_images/avatar.jpeg") : Serializable
+                var urlPhoto: String = "https://www.ischool.berkeley.edu/sites/default/files/default_images/avatar.jpeg",
+                var catchingDate: Long = 0L) : Serializable
 
 data class TeamUser(val email: String, val is_robot: String, val is_manager: String, val IsAgent: String, val is_test: String)
 data class TeamUserData(val IsSuccess: Boolean, val InUser: TeamUser)
